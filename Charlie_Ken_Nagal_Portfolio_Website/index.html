@@ -1,275 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Charlie Ken Alano Nagal — Real Estate Operations Coordinator / REO Virtual Assistant specializing in BPO preparation, asset coordination, vendor management, and real estate reporting.">
-  <title>Charlie Ken Alano Nagal | Real Estate Operations & REO VA</title>
-  <style>
-    :root{
-      --navy:#0b1d33; --navy2:#122b49; --gold:#c9a45c; --cream:#f7f4ed;
-      --ink:#172333; --muted:#647184; --line:#dfe4ea; --white:#fff;
-      --shadow:0 18px 50px rgba(11,29,51,.10); --radius:20px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1160px,92%);margin:auto}
-    .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(223,228,234,.8)}
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-weight:800;letter-spacing:.04em;color:var(--navy)}
-    .brand span{color:var(--gold)}
-    .nav-links{display:flex;gap:28px;font-size:.92rem;font-weight:600;color:#455366}
-    .nav-links a:hover{color:var(--gold)}
-    .menu{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy)}
-    .hero{background:linear-gradient(135deg,var(--navy) 0%,#102944 60%,#193958 100%);color:white;overflow:hidden}
-    .hero-grid{min-height:680px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:50px}
-    .eyebrow{color:#e3c681;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:800;margin-bottom:18px}
-    h1{font-size:clamp(2.7rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.045em;margin-bottom:20px}
-    .hero h1 span{color:#d9ba79}
-    .hero-sub{font-size:1.16rem;line-height:1.75;color:#d7e0ea;max-width:650px;margin-bottom:30px}
-    .cta{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:750;border:1px solid transparent}
-    .btn-primary{background:var(--gold);color:#101b29}
-    .btn-primary:hover{filter:brightness(1.06)}
-    .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
-    .btn-ghost:hover{background:rgba(255,255,255,.08)}
-    .hero-card{position:relative;height:540px;display:flex;align-items:flex-end;justify-content:center}
-    .hero-card:before{content:"";position:absolute;inset:25px 0 0 55px;border:1px solid rgba(201,164,92,.35);border-radius:30px}
-    .portrait{position:relative;width:min(100%,480px);height:540px;object-fit:cover;object-position:center top;border-radius:30px 30px 0 0;filter:saturate(.92);box-shadow:0 30px 70px rgba(0,0,0,.28)}
-    .badge{position:absolute;left:0;bottom:38px;background:#fff;color:var(--navy);padding:16px 20px;border-radius:14px;box-shadow:var(--shadow);font-size:.85rem;font-weight:800}
-    .badge small{display:block;color:var(--muted);font-weight:600;margin-top:2px}
-    .section{padding:95px 0}
-    .section.alt{background:var(--cream)}
-    .section-head{max-width:720px;margin-bottom:45px}
-    .kicker{text-transform:uppercase;letter-spacing:.16em;color:#a07b39;font-size:.75rem;font-weight:850;margin-bottom:10px}
-    h2{font-size:clamp(2rem,3.5vw,3rem);line-height:1.12;letter-spacing:-.035em;color:var(--navy)}
-    .lead{color:var(--muted);font-size:1.05rem;margin-top:14px}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-38px;position:relative;z-index:2}
-    .stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:var(--shadow)}
-    .stat strong{display:block;color:var(--navy);font-size:2rem;line-height:1;margin-bottom:8px}
-    .stat span{color:var(--muted);font-size:.9rem}
-    .expertise{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff}
-    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow);transition:.25s}
-    .icon{width:44px;height:44px;border-radius:12px;background:#f0e8d7;color:#9a7437;display:grid;place-items:center;font-weight:900;margin-bottom:18px}
-    .card h3{font-size:1.1rem;color:var(--navy);margin-bottom:9px}
-    .card p{color:var(--muted);font-size:.94rem}
-    .split{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
-    .timeline{border-left:2px solid #d7c18f;padding-left:30px}
-    .role{position:relative;padding-bottom:38px}
-    .role:last-child{padding-bottom:0}
-    .role:before{content:"";position:absolute;left:-39px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:4px solid #fff;box-shadow:0 0 0 1px #d7c18f}
-    .role h3{font-size:1.25rem;color:var(--navy)}
-    .role .meta{color:#a07b39;font-weight:750;font-size:.88rem;margin:4px 0 12px}
-    .role ul{padding-left:18px;color:var(--muted)}
-    .role li{margin:6px 0}
-    .workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-    .step{padding:22px 16px;background:#fff;border:1px solid var(--line);border-radius:16px;text-align:center}
-    .step b{display:grid;place-items:center;width:36px;height:36px;margin:0 auto 12px;border-radius:50%;background:var(--navy);color:#fff}
-    .step span{font-size:.88rem;font-weight:750;color:var(--navy)}
-    .skills{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .skillbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
-    .skillbox h3{color:var(--navy);margin-bottom:15px}
-    .chips{display:flex;flex-wrap:wrap;gap:9px}
-    .chip{background:#f2f5f8;color:#405066;padding:8px 11px;border-radius:999px;font-size:.82rem;font-weight:650}
-    .education{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .edu{border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff}
-    .edu h3{color:var(--navy);font-size:1.1rem}
-    .edu p{color:var(--muted);margin-top:5px}
-    .contact{background:var(--navy);color:#fff}
-    .contact h2{color:#fff}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-    .contact-copy{color:#ccd6e1;margin-top:15px;max-width:570px}
-    .contact-list{display:grid;gap:12px}
-    .contact-item{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04)}
-    .contact-item b{display:block;color:#fff;font-size:.92rem}
-    .contact-item span{color:#b9c6d4;font-size:.9rem;word-break:break-word}
-    footer{background:#071424;color:#91a1b3;text-align:center;padding:24px;font-size:.82rem}
-    @media(max-width:900px){
-      .nav-links{display:none}.menu{display:block}
-      .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
-      .hero-grid{padding:70px 0 0}.hero-card{height:470px}.portrait{height:470px}
-      .stats{grid-template-columns:repeat(2,1fr);margin-top:20px}
-      .expertise{grid-template-columns:1fr 1fr}.workflow{grid-template-columns:1fr 1fr}
-    }
-    @media(max-width:600px){
-      .nav-inner{height:68px}.hero-grid{padding-top:55px}.hero-card{height:400px}.portrait{height:400px}
-      .hero-card:before{left:20px}.badge{left:10px;bottom:20px}
-      .section{padding:70px 0}.stats,.expertise,.skills,.education{grid-template-columns:1fr}
-      .workflow{grid-template-columns:1fr}.hero-sub{font-size:1rem}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Charlie Ken Nagal — Real Estate Operations, REO Virtual Assistance, BPO analysis, technical support, and practical web/mobile development.">
+  <meta name="theme-color" content="#0a0d12">
+  <title>Charlie Ken Nagal | Real Estate Operations & Technology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">CK<span>N</span></a>
-      <nav class="nav-links">
-        <a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
-      </nav>
-      <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
-    </div>
-  </header>
+<div class="progress" id="progress"></div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Real Estate Operations • REO • Virtual Assistance</div>
-          <h1>Charlie Ken <span>Nagal</span></h1>
-          <p class="hero-sub">Real Estate Operations Coordinator / REO Virtual Assistant helping US-based real estate teams keep property workflows organized, valuations market-supported, vendors coordinated, and reporting accurate.</p>
-          <div class="cta">
-            <a class="btn btn-primary" href="#contact">Let's Work Together</a>
-            <a class="btn btn-ghost" href="mailto:nagal.charlieken.a@gmail.com">Email Me</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <img class="portrait" src="assets/professional-portrait.png" alt="Professional portrait of Charlie Ken Nagal">
-          <div class="badge">US Real Estate Support<small>Based in the Philippines • Remote</small></div>
-        </div>
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Charlie Ken Nagal home"><span>CK</span> NAGAL</a>
+  <nav id="navLinks">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a class="nav-cta" href="#contact">Hire me</a>
+  </nav>
+  <button class="menu" id="menu" aria-label="Open navigation">☰</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">REMOTE • PHILIPPINES • US-CLIENT SUPPORT</p>
+      <h1>Real estate operations, <em>powered by technology.</em></h1>
+      <p class="lede">I'm Charlie Ken Nagal — a Real Estate Operations / REO Virtual Assistant who combines BPO and comparable analysis, vendor coordination, reporting, and technical problem-solving with a hands-on IT background.</p>
+      <div class="actions">
+    <a class="btn primary" href="#contact">I'm available to work <span>↗</span></a>
+    <a class="btn secondary" href="https://drive.google.com/drive/folders/1_KmBu05g_SiJ70yPW4HumSAyLOM8TM_2?usp=sharing" target="_blank" rel="noopener">View resume ↗</a>
       </div>
-    </section>
-
-    <div class="container">
-      <div class="stats">
-        <div class="stat"><strong>20+</strong><span>Active REO properties managed simultaneously</span></div>
-        <div class="stat"><strong>2+ yrs</strong><span>Real estate operations experience</span></div>
-        <div class="stat"><strong>BPO</strong><span>Valuation preparation & comparable analysis</span></div>
-        <div class="stat"><strong>US</strong><span>Remote support for US-based clients</span></div>
+      <div class="proof">
+        <div><b>20+</b><span>active REO properties<br>handled simultaneously</span></div>
+        <div><b>2+ yrs</b><span>real estate operations<br>experience</span></div>
+        <div><b>US</b><span>remote workflow<br>experience</span></div>
       </div>
     </div>
-
-    <section class="section" id="expertise">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">What I Do</div>
-          <h2>Operational support built around accuracy, follow-through, and market intelligence.</h2>
-          <p class="lead">I work across the REO asset lifecycle, connecting inspections, valuations, vendors, documentation, and reporting into one dependable workflow.</p>
-        </div>
-        <div class="expertise">
-          <article class="card"><div class="icon">01</div><h3>Broker Price Opinions</h3><p>Prepare and update BPOs, including As-Is values, ARV, comparable sales analysis, market-supported adjustments, and property-condition considerations.</p></article>
-          <article class="card"><div class="icon">02</div><h3>REO Asset Coordination</h3><p>Coordinate inspection, valuation, reporting, follow-ups, and portfolio tasks while keeping multiple properties moving toward their deadlines.</p></article>
-          <article class="card"><div class="icon">03</div><h3>Vendor & Field Dispatch</h3><p>Coordinate third-party inspections, repair bids, service follow-ups, photo collection, and communication with field vendors and stakeholders.</p></article>
-          <article class="card"><div class="icon">04</div><h3>Real Estate Reporting</h3><p>Complete Monthly Status Reports, Marketing Reports, Occupancy Reports, and real-time portfolio updates with strong attention to detail.</p></article>
-          <article class="card"><div class="icon">05</div><h3>Workflow Management</h3><p>Prioritize high-volume tasks, track open items, validate data, manage portals, and proactively address missing information or workflow bottlenecks.</p></article>
-          <article class="card"><div class="icon">06</div><h3>Market & Comp Research</h3><p>Analyze comparable sales and market trends to support pricing decisions and provide a clear, defensible foundation for real estate reporting.</p></article>
-        </div>
+    <div class="hero-visual">
+      <div class="portrait-frame">
+        <img src="assets/professional-portrait.png" alt="Professional portrait of Charlie Ken Nagal">
       </div>
-    </section>
+      <div class="floating-card card-one"><span class="pulse"></span><div><b>Available</b><small>For remote opportunities</small></div></div>
+      <div class="floating-card card-two"><span class="mini-icon">⌁</span><div><b>REO + BPO</b><small>Operations & market research</small></div></div>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></div>
+</section>
 
-    <section class="section alt" id="experience">
-      <div class="container split">
-        <div class="section-head">
-          <div class="kicker">Career</div>
-          <h2>Experience that combines real estate operations with technical problem-solving.</h2>
-          <p class="lead">My background in technical support adds a structured troubleshooting mindset to my current real estate operations work.</p>
-        </div>
-        <div class="timeline">
-          <article class="role">
-            <h3>Real Estate Virtual Assistant / REO Operations Coordinator</h3>
-            <div class="meta">Remote • US-Based Clients • 2024 – Present</div>
-            <ul>
-              <li>Manage 20+ active REO properties simultaneously.</li>
-              <li>Prepare and update BPOs, including As-Is values, ARV, and market-supported adjustments.</li>
-              <li>Conduct comparable sales analysis and validate pricing using market trends and property condition.</li>
-              <li>Coordinate inspections, vendor dispatch, photo collection, repair bids, and service follow-ups.</li>
-              <li>Complete Monthly Status, Marketing, and Occupancy Reports and maintain multiple portals daily.</li>
-              <li>Identify missing photos, vendor updates, and other delays and proactively resolve workflow bottlenecks.</li>
-            </ul>
-          </article>
-          <article class="role">
-            <h3>Technical Support Representative – Sonos</h3>
-            <div class="meta">Foundever (formerly Sykes) • Makati, Philippines • Oct 2023 – Oct 2024</div>
-            <ul>
-              <li>Provided technical support for wireless audio systems through high-volume customer interactions.</li>
-              <li>Diagnosed hardware, software, and network-related issues.</li>
-              <li>Delivered clear, step-by-step troubleshooting and maintained end-to-end issue ownership.</li>
-            </ul>
-          </article>
-          <article class="role">
-            <h3>Earlier Experience</h3>
-            <div class="meta">2021 – 2023</div>
-            <ul>
-              <li>English Tutor — Acadsoc, Remote (June–August 2021).</li>
-              <li>On-the-Job Training — Regional Office Associate, Department of Environment and Natural Resources, Baguio City (March–June 2023).</li>
-            </ul>
-          </article>
-        </div>
+<section class="trust">
+  <div><span>CORE FOCUS</span><b>REO OPERATIONS</b></div>
+  <div><span>VALUATION</span><b>BPO + COMPS</b></div>
+  <div><span>COORDINATION</span><b>VENDORS + REPORTING</b></div>
+  <div><span>TECH</span><b>WEB + ANDROID</b></div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-top">
+    <div>
+      <p class="eyebrow">SELECTED WORK</p>
+      <h2>Proof of what I can do.</h2>
+    </div>
+    <p class="section-note">Two sides of the same strength: organized execution and technical problem-solving.</p>
+  </div>
+
+  <div class="work-grid">
+    <article class="feature-card realestate">
+      <div class="feature-head"><span class="number">01</span><span class="label">REAL ESTATE / REO</span></div>
+      <div class="feature-body">
+        <p class="eyebrow">OPERATIONS</p>
+        <h3>Keep properties moving.</h3>
+        <p>I support the REO lifecycle from property information and inspections through BPO preparation, vendor follow-ups, marketing activity, and recurring reporting.</p>
+        <div class="chips"><span>BPO Preparation</span><span>Comparable Analysis</span><span>Vendor Dispatch</span><span>MSR / Marketing</span><span>Occupancy Reports</span><span>Portal Updates</span></div>
       </div>
-    </section>
+      <div class="feature-footer"><span>Built for deadline-driven US workflows</span><a href="#contact">Discuss a role →</a></div>
+    </article>
 
-    <section class="section" id="workflow">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">REO Workflow</div>
-          <h2>From property activity to actionable reporting.</h2>
-          <p class="lead">A structured approach to keeping stakeholders informed and tasks moving.</p>
-        </div>
-        <div class="workflow">
-          <div class="step"><b>1</b><span>Inspection & Property Data</span></div>
-          <div class="step"><b>2</b><span>Comps & Valuation</span></div>
-          <div class="step"><b>3</b><span>Vendor Coordination</span></div>
-          <div class="step"><b>4</b><span>Reports & Portal Updates</span></div>
-          <div class="step"><b>5</b><span>Follow-up & Resolution</span></div>
-        </div>
+    <article class="feature-card developer">
+      <div class="feature-head"><span class="number">02</span><span class="label">DEVELOPMENT</span></div>
+      <div class="feature-body">
+        <p class="eyebrow">INTERACTIVE PROJECTS</p>
+        <h3>Don't just read the code. Try it.</h3>
+        <p>My IT background includes Android and web development. I turn concepts into usable interfaces with CRUD flows, APIs, maps, responsive UI, and practical JavaScript.</p>
+        <div class="chips"><span>Kotlin</span><span>Android</span><span>JavaScript</span><span>HTML / CSS</span><span>SQLite</span><span>APIs</span></div>
       </div>
-    </section>
+      <div class="feature-footer"><span>Interactive browser recreations</span><a href="#demos">Try demos →</a></div>
+    </article>
+  </div>
+</section>
 
-    <section class="section alt" id="skills">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">Capabilities</div>
-          <h2>A practical mix of real estate, operations, and technology skills.</h2>
-        </div>
-        <div class="skills">
-          <div class="skillbox"><h3>Real Estate & REO</h3><div class="chips">
-            <span class="chip">REO Asset Lifecycle</span><span class="chip">BPO Preparation & Review</span><span class="chip">Comparable Sales Analysis</span><span class="chip">Market Research</span><span class="chip">Repair Estimate Coordination</span><span class="chip">Portfolio Management</span><span class="chip">MSR</span><span class="chip">Marketing Reports</span><span class="chip">Occupancy Reports</span>
-          </div></div>
-          <div class="skillbox"><h3>Operations & Coordination</h3><div class="chips">
-            <span class="chip">Task Prioritization</span><span class="chip">Process Tracking</span><span class="chip">Vendor Follow-up</span><span class="chip">Portal Management</span><span class="chip">Data Validation</span><span class="chip">Document Management</span><span class="chip">Inspection Dispatch</span><span class="chip">Stakeholder Communication</span>
-          </div></div>
-          <div class="skillbox"><h3>Technology</h3><div class="chips">
-            <span class="chip">Microsoft Excel</span><span class="chip">Word</span><span class="chip">PowerPoint</span><span class="chip">Google Workspace</span><span class="chip">Google Sheets</span><span class="chip">Dropbox</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span>
-          </div></div>
-          <div class="skillbox"><h3>Additional Strengths</h3><div class="chips">
-            <span class="chip">Attention to Detail</span><span class="chip">Problem Solving</span><span class="chip">Fast-Paced Adaptability</span><span class="chip">Written Communication</span><span class="chip">Verbal Communication</span><span class="chip">Multitasking</span><span class="chip">Independent Decision-Making</span><span class="chip">Photoshop</span><span class="chip">Canva</span><span class="chip">Filmora</span>
-          </div></div>
-        </div>
-      </div>
-    </section>
+<section class="section dark" id="demos">
+  <div class="section-top">
+    <div><p class="eyebrow">LIVE DEMOS</p><h2>Small projects. Real interactions.</h2></div>
+    <p class="section-note">Browser versions of projects from my development portfolio. Source repositories remain one click away.</p>
+  </div>
+  <div class="demo-grid">
+    <article class="demo" data-demo="todo"><span class="demo-no">01</span><h3>Task Manager</h3><p>CRUD workflow with local persistence.</p><div><span>Kotlin / SQLite concept</span><button>Try it ↗</button></div></article>
+    <article class="demo" data-demo="contacts"><span class="demo-no">02</span><h3>Contact List</h3><p>Search, add, and delete contact records.</p><div><span>RecyclerView concept</span><button>Try it ↗</button></div></article>
+    <article class="demo" data-demo="quiz"><span class="demo-no">03</span><h3>True / False Quiz</h3><p>State, scoring, feedback, and replay.</p><div><span>Android concept</span><button>Try it ↗</button></div></article>
+    <article class="demo" data-demo="weather"><span class="demo-no">04</span><h3>Weather Finder</h3><p>City search powered by a public API.</p><div><span>API + JavaScript</span><button>Try it ↗</button></div></article>
+  </div>
+  <div class="github-strip"><span>More source code and projects</span><a href="https://github.com/Kei-Hanma" target="_blank" rel="noopener">View GitHub ↗</a></div>
+</section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">Education & Training</div>
-          <h2>Technology foundation. Real estate specialization.</h2>
-        </div>
-        <div class="education">
-          <div class="edu"><h3>Bachelor of Science in Information Technology</h3><p>Major in Web & Mobile Technologies</p><p><strong>Pangasinan State University – Urdaneta Campus</strong> • 2018–2023</p></div>
-          <div class="edu"><h3>Professional Training</h3><p>Cisco – Internet of Things & Networking • UI/UX Introduction • Laravel MVC Web Development • Android Development (Kotlin & Flutter) • Technical Support & Troubleshooting Training (Sonos)</p></div>
-        </div>
-      </div>
-    </section>
+<section class="section" id="experience">
+  <div class="section-top">
+    <div><p class="eyebrow">EXPERIENCE</p><h2>Built around ownership.</h2></div>
+    <p class="section-note">I bring a structured troubleshooting mindset from technical support into real estate operations.</p>
+  </div>
+  <div class="timeline">
+    <article class="timeline-item">
+      <div class="time">2024 — PRESENT</div>
+      <div><span class="role-tag">REAL ESTATE</span><h3>Real Estate Virtual Assistant / REO Operations Coordinator</h3><p class="company">Remote • US-based clients</p>
+      <ul><li>Manage 20+ active REO properties simultaneously and keep time-sensitive tasks moving.</li><li>Prepare and update BPOs, including As-Is values, ARV, comparable sales analysis, and market-supported reasoning.</li><li>Coordinate inspections, vendor dispatch, photo collection, repair bids, follow-ups, and portal updates.</li><li>Complete Monthly Status, Marketing, and Occupancy Reports while identifying missing information and workflow bottlenecks.</li></ul></div>
+    </article>
+    <article class="timeline-item">
+      <div class="time">OCT 2023 — OCT 2024</div>
+      <div><span class="role-tag">TECH SUPPORT</span><h3>Technical Support Representative — Sonos</h3><p class="company">Foundever (formerly Sykes) • Makati, Philippines</p>
+      <ul><li>Diagnosed hardware, software, network, and connectivity issues in a high-volume support environment.</li><li>Used clear, step-by-step troubleshooting while maintaining end-to-end issue ownership.</li></ul></div>
+    </article>
+    <article class="timeline-item">
+      <div class="time">2021 — 2023</div>
+      <div><span class="role-tag">EARLIER EXPERIENCE</span><h3>English Tutor / Government OJT</h3><p class="company">Acadsoc • DENR Regional Office</p>
+      <ul><li>Developed communication, documentation, adaptability, and professional coordination skills.</li></ul></div>
+    </article>
+  </div>
+</section>
 
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <div class="kicker">Let's Connect</div>
-          <h2>Need reliable support behind your real estate operations?</h2>
-          <p class="contact-copy">Whether you need help with REO coordination, BPO preparation, vendor follow-ups, or recurring reporting, I bring organized execution and a technical problem-solving mindset to the workflow.</p>
-        </div>
-        <div class="contact-list">
-          <a class="contact-item" href="mailto:nagal.charlieken.a@gmail.com"><div>✉</div><div><b>Email</b><span>nagal.charlieken.a@gmail.com</span></div></a>
-          <a class="contact-item" href="tel:+639946589521"><div>☎</div><div><b>Phone / WhatsApp</b><span>+63 994 658 9521</span></div></a>
-          <a class="contact-item" href="https://drive.google.com/drive/folders/1_KmBu05g_SiJ70yPW4HumSAyLOM8TM_2?usp=sharing"><div>ℹ️</div><div><b>Resume</b><span>Profile • Click to see my Resume</span></div></a>
-          <a class="contact-item" href="https://www.linkedin.com/in/charlie-ken-a-nagal-87739520b" target="_blank" rel="noopener"><div>in</div><div><b>LinkedIn</b><span>View professional profile</span></div></a>
-        </div>
-      </div>
-    </section>
-  </main>
+<section class="section light" id="skills">
+  <div class="section-top"><div><p class="eyebrow">CAPABILITIES</p><h2>A practical toolkit.</h2></div></div>
+  <div class="skill-layout">
+    <div class="skill-feature"><span>01</span><h3>Real Estate & REO</h3><p>REO lifecycle • BPO preparation • Comparable sales analysis • Market research • Repair estimate coordination • Portfolio tracking • MSR • Marketing reports • Occupancy reports</p></div>
+    <div class="skill-feature"><span>02</span><h3>Operations</h3><p>Task prioritization • Vendor follow-up • Portal management • Data validation • Document management • Inspection dispatch • Stakeholder communication</p></div>
+    <div class="skill-feature"><span>03</span><h3>Technology</h3><p>Excel • Word • PowerPoint • Google Workspace • Google Sheets • Dropbox • HTML • CSS • JavaScript • Kotlin • Python • PHP • Java • C++</p></div>
+    <div class="skill-feature"><span>04</span><h3>Problem Solving</h3><p>Technical troubleshooting • Attention to detail • Fast-paced adaptability • Written communication • Verbal communication • Photoshop • Canva • Filmora</p></div>
+  </div>
+</section>
 
-  <footer>© 2026 Charlie Ken Alano Nagal. Real Estate Operations & REO Virtual Assistance.</footer>
+<section class="section about" id="about">
+  <div class="about-copy"><p class="eyebrow">ABOUT</p><h2>Real estate operator with an IT foundation.</h2><p>My advantage is the combination: I understand the urgency and detail required in operations, while also being comfortable with software, data, troubleshooting, and digital workflows.</p><p>That means I can follow a process precisely, spot what is missing, learn new systems quickly, and communicate clearly when something needs attention.</p></div>
+  <div class="about-details">
+    <div><span>EDUCATION</span><b>BS Information Technology</b><small>Major in Web & Mobile Technologies<br>Pangasinan State University • 2018–2023</small></div>
+    <div><span>TRAINING</span><b>Web, Mobile & Networking</b><small>Cisco IoT & Networking • UI/UX • Laravel MVC • Android/Kotlin & Flutter • Technical Support</small></div>
+    <div><span>WORK STYLE</span><b>Remote-ready & accountable</b><small>Organized follow-through, clear communication, and comfortable working independently across multiple priorities.</small></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="contact-inner">
+    <div><p class="eyebrow">LET'S TALK</p><h2>Have a role that needs someone who can own the workflow?</h2><p>I'm open to Real Estate Operations, REO VA, BPO / valuation support, operations coordination, technical support, and selected junior web/mobile roles.</p></div>
+    <div class="contact-actions">
+      <a class="contact-link primary-contact" href="mailto:nagal.charlieken.a@gmail.com"><span>EMAIL</span><b>nagal.charlieken.a@gmail.com</b><i>↗</i></a>
+      <a class="contact-link" href="tel:+639946589521"><span>PHONE / WHATSAPP</span><b>+63 994 658 9521</b><i>↗</i></a>
+      <a class="contact-link" href="https://www.linkedin.com/in/charlie-ken-a-nagal-87739520b" target="_blank" rel="noopener"><span>LINKEDIN</span><b>Professional profile</b><i>↗</i></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><span>© <span id="year"></span> Charlie Ken Alano Nagal</span><span>Real Estate Operations • REO • Technology</span></footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="backdrop" data-close></div>
+  <div class="modal-card"><button class="close" data-close>×</button><div id="modalContent"></div></div>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
